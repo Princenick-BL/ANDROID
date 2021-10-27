@@ -54,7 +54,7 @@
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fromage"
+                    android:text="Fruit"
                     android:textColor="#fff"
                     android:buttonTint="#fff"
                     android:textFontWeight="@android:integer/config_longAnimTime"/>

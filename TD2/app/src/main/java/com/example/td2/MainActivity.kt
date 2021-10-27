@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(goToRepas)
         }
         buttonMenu.setOnClickListener {
-            val goToMenu =  Intent(this,Repas::class.java)
+            val goToMenu =  Intent(this,Meteo::class.java)
             startActivity(goToMenu)
         }
     }

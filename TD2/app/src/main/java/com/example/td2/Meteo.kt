@@ -3,9 +3,9 @@ package com.example.td2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class Menu : AppCompatActivity() {
+class Meteo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        setContentView(R.layout.activity_meteo)
     }
 }
