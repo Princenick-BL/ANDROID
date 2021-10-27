@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TD2">
         <activity
+            android:name=".Menu"
+            android:exported="true" />
+        <activity
+            android:name=".menu"
+            android:exported="true" />
+        <activity
             android:name=".Repas"
             android:exported="true" />
         <activity
