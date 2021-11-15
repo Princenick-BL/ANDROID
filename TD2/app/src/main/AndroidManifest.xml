@@ -10,13 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TD2">
         <activity
+            android:name=".Meteo_splash"
+            android:exported="true" />
+        <activity
             android:name=".Meteo"
-            android:exported="true" />
-        <activity
-            android:name=".Menu"
-            android:exported="true" />
-        <activity
-            android:name=".menu"
             android:exported="true" />
         <activity
             android:name=".Repas"
