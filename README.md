@@ -1,2 +1,3 @@
 # ANDROID
-Membre du groupe : Prince Nick BALLO
+Membre du groupe : Prince Nick BALLO, Maria ADISSA
+
