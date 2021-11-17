@@ -12,6 +12,10 @@ import android.widget.TextView;
 public class Roll_Dice extends AppCompatActivity {
 
     private int NB_DICE=1;
+    Button rollButton;
+    TextView resultTextView1,resultTextView2;
+    EditText nbFacesTxt;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,10 +27,10 @@ public class Roll_Dice extends AppCompatActivity {
             NB_DICE = intent.getIntExtra("NB_DICE",1);
         }
 
-        Button rollButton = (Button) findViewById(R.id.btn);
-        TextView resultTextView1 = (TextView) findViewById(R.id.textView1);
-        TextView resultTextView2 = (TextView) findViewById(R.id.textView2);
-        EditText nbFacesTxt = (EditText) findViewById(R.id.nbFaces);
+        rollButton = (Button) findViewById(R.id.btn);
+        resultTextView1 = (TextView) findViewById(R.id.textView1);
+        resultTextView2 = (TextView) findViewById(R.id.textView2);
+        nbFacesTxt = (EditText) findViewById(R.id.nbFaces);
 
 
         rollButton.setOnClickListener(new View.OnClickListener() {
