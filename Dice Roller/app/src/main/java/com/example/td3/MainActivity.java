@@ -2,6 +2,7 @@ package com.example.td3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,29 +19,24 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button rollButton = (Button) findViewById(R.id.btn);
 
-        rollButton.setOnClickListener(new View.OnClickListener() {
+        Button unDe = findViewById(R.id.unDe);
+        Button deuxDe = findViewById(R.id.deuxDe);
+
+        unDe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView resultTextView1 = (TextView) findViewById(R.id.textView1);
-                TextView resultTextView2 = (TextView) findViewById(R.id.textView2);
-
-                EditText nbFacesTxt = (EditText) findViewById(R.id.nbFaces);
-                String temp=nbFacesTxt.getText().toString();
-
-                int nbFaces = 0;
-                // to avoid NumberFormatException
-                if(!"".equals(temp)){
-                    nbFaces = Integer.parseInt(temp);
-                }
-                Dice dice1 = new Dice(nbFaces);
-                Dice dice2 = new Dice(nbFaces);
-                resultTextView1.setText("" + dice1.roll());
-                resultTextView2.setText("" + dice2.roll());
-
-
-
+                Intent intent = new Intent(MainActivity.this, Roll_Dice.class);
+                intent.putExtra("NB_DICE", 1);
+                startActivity(intent);
+            }
+        });
+        deuxDe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Roll_Dice.class);
+                intent.putExtra("NB_DICE", 2);
+                startActivity(intent);
             }
         });
     }
