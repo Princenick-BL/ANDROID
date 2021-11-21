@@ -18,6 +18,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle(getLocalClassName());
+        // récupérer le contexte d'application et la donnée qu'elle contient
+        NewsListApplication app = (NewsListApplication) getApplicationContext();
+        //String login = app.getLogin();
+
 
         EditText loginInput = findViewById(R.id.loginInput);
         Button loginBtn = findViewById(R.id.loginBtn);
@@ -25,7 +29,12 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String login = loginInput.getText().toString();
+                String temp = loginInput.getText().toString();
+
+                app.setLogin(temp);
+                String login = app.getLogin();
+                //System.out.println(login);
+                //String login = loginInput.getText().toString();
                 /* Verifier Si l'utilisateur  bien entré un login*/
                 if(login.trim().length() > 0){//Si oui
                     Intent intent = new Intent(LoginActivity.this, NewsActivity.class);
