@@ -1,0 +1,17 @@
+com/example/td6/Repos/Adapter.java
+ com.example.td6.Repos.Adapter
+com/example/td6/GithubService.java
+ com.example.td6.GithubService
+com/example/td6/Repos/ViewHolder.java
+ com.example.td6.Repos.ViewHolder
+com/example/td6/Repos/Repo.java
+ com.example.td6.Repos.Repo
+com/example/td6/BuildConfig.java
+ com.example.td6.BuildConfig
+com/example/td6/Splash.java
+ com.example.td6.Splash
+ com.example.td6.Splash$1
+com/example/td6/MainActivity.java
+ com.example.td6.MainActivity
+ com.example.td6.MainActivity$1
+ com.example.td6.MainActivity$1$1
