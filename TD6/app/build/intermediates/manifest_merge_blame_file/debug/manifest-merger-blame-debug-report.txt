@@ -1,0 +1,144 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.td6"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+8-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml
+10
+11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+12    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->[com.google.firebase:firebase-database:19.7.0] C:\Users\maria\.gradle\caches\transforms-3\ce071d7c015f0b443a36d9aa0d2e7568\transformed\jetified-firebase-database-19.7.0\AndroidManifest.xml:25:5-79
+13-->[com.google.firebase:firebase-database:19.7.0] C:\Users\maria\.gradle\caches\transforms-3\ce071d7c015f0b443a36d9aa0d2e7568\transformed\jetified-firebase-database-19.7.0\AndroidManifest.xml:25:22-76
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->[com.google.firebase:firebase-database:19.7.0] C:\Users\maria\.gradle\caches\transforms-3\ce071d7c015f0b443a36d9aa0d2e7568\transformed\jetified-firebase-database-19.7.0\AndroidManifest.xml:26:5-67
+14-->[com.google.firebase:firebase-database:19.7.0] C:\Users\maria\.gradle\caches\transforms-3\ce071d7c015f0b443a36d9aa0d2e7568\transformed\jetified-firebase-database-19.7.0\AndroidManifest.xml:26:22-64
+15
+16    <application
+16-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:5:5-26:19
+17        android:allowBackup="true"
+17-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:6:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.7.0] C:\Users\maria\.gradle\caches\transforms-3\21249a56641fb0309777a5ae16ce99ff\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:extractNativeLibs="false"
+21        android:icon="@mipmap/ic_launcher"
+21-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:7:9-43
+22        android:label="@string/app_name"
+22-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:8:9-41
+23        android:roundIcon="@mipmap/ic_launcher_round"
+23-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:9:9-54
+24        android:supportsRtl="true"
+24-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:10:9-35
+25        android:testOnly="true"
+26        android:theme="@style/Theme.TD6" >
+26-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:11:9-41
+27        <activity
+27-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:12:9-20:20
+28            android:name="com.example.td6.Splash"
+28-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:13:13-35
+29            android:exported="true" >
+29-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:14:13-36
+30            <intent-filter>
+30-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:15:13-19:29
+31                <action android:name="android.intent.action.MAIN" />
+31-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:16:17-69
+31-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:16:25-66
+32
+33                <category android:name="android.intent.category.LAUNCHER" />
+33-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:18:17-77
+33-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:18:27-74
+34            </intent-filter>
+35        </activity>
+36        <activity
+36-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:21:9-25:20
+37            android:name="com.example.td6.MainActivity"
+37-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:22:13-41
+38            android:exported="true" >
+38-->C:\Users\maria\OneDrive\Desktop\Work\Studies\Sciences_Tech\S9\Dev_mobile\ANDROID\TD6\app\src\main\AndroidManifest.xml:23:13-36
+39        </activity>
+40
+41        <service
+41-->[com.google.firebase:firebase-database:19.7.0] C:\Users\maria\.gradle\caches\transforms-3\ce071d7c015f0b443a36d9aa0d2e7568\transformed\jetified-firebase-database-19.7.0\AndroidManifest.xml:29:9-35:19
+42            android:name="com.google.firebase.components.ComponentDiscoveryService"
+42-->[com.google.firebase:firebase-database:19.7.0] C:\Users\maria\.gradle\caches\transforms-3\ce071d7c015f0b443a36d9aa0d2e7568\transformed\jetified-firebase-database-19.7.0\AndroidManifest.xml:30:13-84
+43            android:directBootAware="true"
+43-->[com.google.firebase:firebase-common:19.5.0] C:\Users\maria\.gradle\caches\transforms-3\374b0cc4941408cb2b40728acba6437b\transformed\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
+44            android:exported="false" >
+44-->[com.google.firebase:firebase-database:19.7.0] C:\Users\maria\.gradle\caches\transforms-3\ce071d7c015f0b443a36d9aa0d2e7568\transformed\jetified-firebase-database-19.7.0\AndroidManifest.xml:31:13-37
+45            <meta-data
+45-->[com.google.firebase:firebase-database:19.7.0] C:\Users\maria\.gradle\caches\transforms-3\ce071d7c015f0b443a36d9aa0d2e7568\transformed\jetified-firebase-database-19.7.0\AndroidManifest.xml:32:13-34:85
+46                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+46-->[com.google.firebase:firebase-database:19.7.0] C:\Users\maria\.gradle\caches\transforms-3\ce071d7c015f0b443a36d9aa0d2e7568\transformed\jetified-firebase-database-19.7.0\AndroidManifest.xml:33:17-109
+47                android:value="com.google.firebase.components.ComponentRegistrar" />
+47-->[com.google.firebase:firebase-database:19.7.0] C:\Users\maria\.gradle\caches\transforms-3\ce071d7c015f0b443a36d9aa0d2e7568\transformed\jetified-firebase-database-19.7.0\AndroidManifest.xml:34:17-82
+48            <!--
+49                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+50                clients to use it as well, by defining this registrar in their own core/common library.
+51            -->
+52            <meta-data
+52-->[com.google.firebase:firebase-common:19.5.0] C:\Users\maria\.gradle\caches\transforms-3\374b0cc4941408cb2b40728acba6437b\transformed\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
+53                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+53-->[com.google.firebase:firebase-common:19.5.0] C:\Users\maria\.gradle\caches\transforms-3\374b0cc4941408cb2b40728acba6437b\transformed\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
+54                android:value="com.google.firebase.components.ComponentRegistrar" />
+54-->[com.google.firebase:firebase-common:19.5.0] C:\Users\maria\.gradle\caches\transforms-3\374b0cc4941408cb2b40728acba6437b\transformed\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
+55        </service>
+56
+57        <activity
+57-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\maria\.gradle\caches\transforms-3\06f08a7c9eb92bee56db18779f31a479\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+58            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+58-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\maria\.gradle\caches\transforms-3\06f08a7c9eb92bee56db18779f31a479\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+59            android:exported="false"
+59-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\maria\.gradle\caches\transforms-3\06f08a7c9eb92bee56db18779f31a479\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+60            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+60-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\maria\.gradle\caches\transforms-3\06f08a7c9eb92bee56db18779f31a479\transformed\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+61
+62        <provider
+62-->[com.google.firebase:firebase-common:19.5.0] C:\Users\maria\.gradle\caches\transforms-3\374b0cc4941408cb2b40728acba6437b\transformed\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+63            android:name="com.google.firebase.provider.FirebaseInitProvider"
+63-->[com.google.firebase:firebase-common:19.5.0] C:\Users\maria\.gradle\caches\transforms-3\374b0cc4941408cb2b40728acba6437b\transformed\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+64            android:authorities="com.example.td6.firebaseinitprovider"
+64-->[com.google.firebase:firebase-common:19.5.0] C:\Users\maria\.gradle\caches\transforms-3\374b0cc4941408cb2b40728acba6437b\transformed\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+65            android:directBootAware="true"
+65-->[com.google.firebase:firebase-common:19.5.0] C:\Users\maria\.gradle\caches\transforms-3\374b0cc4941408cb2b40728acba6437b\transformed\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+66            android:exported="false"
+66-->[com.google.firebase:firebase-common:19.5.0] C:\Users\maria\.gradle\caches\transforms-3\374b0cc4941408cb2b40728acba6437b\transformed\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+67            android:initOrder="100" />
+67-->[com.google.firebase:firebase-common:19.5.0] C:\Users\maria\.gradle\caches\transforms-3\374b0cc4941408cb2b40728acba6437b\transformed\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+68
+69        <meta-data
+69-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\maria\.gradle\caches\transforms-3\5b4a5af03789cf1669cedf0b85ed5f41\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+70            android:name="com.google.android.gms.version"
+70-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\maria\.gradle\caches\transforms-3\5b4a5af03789cf1669cedf0b85ed5f41\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+71            android:value="@integer/google_play_services_version" />
+71-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\maria\.gradle\caches\transforms-3\5b4a5af03789cf1669cedf0b85ed5f41\transformed\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+72
+73        <provider
+73-->[androidx.emoji2:emoji2:1.0.0] C:\Users\maria\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+74            android:name="androidx.startup.InitializationProvider"
+74-->[androidx.emoji2:emoji2:1.0.0] C:\Users\maria\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+75            android:authorities="com.example.td6.androidx-startup"
+75-->[androidx.emoji2:emoji2:1.0.0] C:\Users\maria\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+76            android:exported="false" >
+76-->[androidx.emoji2:emoji2:1.0.0] C:\Users\maria\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+77            <meta-data
+77-->[androidx.emoji2:emoji2:1.0.0] C:\Users\maria\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+78                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+78-->[androidx.emoji2:emoji2:1.0.0] C:\Users\maria\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+79                android:value="androidx.startup" />
+79-->[androidx.emoji2:emoji2:1.0.0] C:\Users\maria\.gradle\caches\transforms-3\beb1e8c1d1724370afa1be71eb324942\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+80            <meta-data
+80-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\maria\.gradle\caches\transforms-3\4d87c3e3b70abeed5e61faf08f3b9b5b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+81                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+81-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\maria\.gradle\caches\transforms-3\4d87c3e3b70abeed5e61faf08f3b9b5b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+82                android:value="androidx.startup" />
+82-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\maria\.gradle\caches\transforms-3\4d87c3e3b70abeed5e61faf08f3b9b5b\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+83        </provider>
+84    </application>
+85
+86</manifest>
