@@ -1,4 +1,5 @@
-package com.example.td6_v2.Repos;
+package com.example.td6_v2;
+
 
 
 import java.util.List;
@@ -16,6 +17,6 @@ public interface GithubService {
     Call<List<Repo>> listRepos(@Path("user") String user);
 
     @GET("/search/repositories")
-    Call<List<Repo>>  searchRepos(@Query("q") String query);
+    Call<Repos>  searchRepos(@Query("q") String query);
 
 }

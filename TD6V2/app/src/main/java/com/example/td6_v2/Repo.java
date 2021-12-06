@@ -1,4 +1,4 @@
-package com.example.td6_v2.Repos;
+package com.example.td6_v2;
 
 public class Repo {
     private int id;
