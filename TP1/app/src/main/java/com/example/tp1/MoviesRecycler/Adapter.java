@@ -44,7 +44,7 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
         //Remplissage des champs du view holder avec les valeurs de la position correspondante
         Movie movie = movies.get(position);
         ImageView movieImg = holder.movieImg;
-        new DownLoadImageTask(movieImg).execute(movie.getImageUrl());
+        new DownLoadImageTask(movieImg).execute("https://image.tmdb.org/t/p/w500/"+movie.getImageUrl());
 
     }
 
