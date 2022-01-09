@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TP1</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_popular">Populaires</string>
+    <string name="title_upcoming">Prochainement</string>
+    <string name="title_search">Chercher</string>
+    <string name="favorite">Favories</string>
+    <string name="language">fr-FR</string>
+</resources>

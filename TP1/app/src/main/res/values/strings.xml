@@ -4,4 +4,6 @@
     <string name="title_popular">Popular</string>
     <string name="title_upcoming">Upcoming</string>
     <string name="title_search">Search</string>
+    <string name="favorite">Favorite</string>
+    <string name="language">en-US</string>
 </resources>

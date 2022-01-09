@@ -22,4 +22,11 @@
         android:name="com.example.tp1.ui.notifications.NotificationsFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.example.tp1.ui.Favorite.FavoriteFragment"
+        android:label="@string/favorite"
+        tools:layout="@layout/favorite_fragment" />
+
 </navigation>

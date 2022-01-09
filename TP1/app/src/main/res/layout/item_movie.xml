@@ -9,21 +9,24 @@
     app:cardCornerRadius="10dp">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/movieImg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/movieImg"
-            tools:src="@drawable/movie"/>
+            tools:src="@drawable/movie"
+            android:scaleType="centerCrop"
+            />
         <ImageView
             android:id="@+id/addFav"
-            android:src="@drawable/ic_add_favorite"
+            android:src="@drawable/ic_baseline_favorite_24"
             android:layout_margin="10dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_width="40dp"
-            android:layout_height="40dp"/>
+            android:layout_height="40dp"
+            android:backgroundTint="#CDDC39"/>
     </RelativeLayout>
 
 

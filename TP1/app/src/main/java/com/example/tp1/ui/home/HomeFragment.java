@@ -1,10 +1,12 @@
 package com.example.tp1.ui.home;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,18 +15,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tp1.MainActivity;
-import com.example.tp1.Movie;
 import com.example.tp1.MovieServices;
-import com.example.tp1.Movies;
+import com.example.tp1.Movie.Movies;
 import com.example.tp1.MoviesRecycler.Adapter;
 import com.example.tp1.R;
 import com.example.tp1.databinding.FragmentHomeBinding;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,8 +36,17 @@ public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
     private MovieServices movieServices;
     public RecyclerView rvPopular;
+    Resources resources;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        ((MainActivity)getActivity()).setFragmentRefreshListener(new MainActivity.FragmentRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getPopular();
+            }
+        });
+
         homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
@@ -67,7 +74,11 @@ public class HomeFragment extends Fragment {
         binding = null;
     }
     public void getPopular(){
-        movieServices.getPopularMovies("en-US",1).enqueue(new Callback<Movies>() {
+
+        resources = getContext().getResources();
+        String lang = resources.getString(R.string.language);
+
+        movieServices.getPopularMovies(lang,1).enqueue(new Callback<Movies>() {
             @Override
             public void onResponse(Call<Movies> call, Response<Movies> response) {
 
@@ -77,7 +88,6 @@ public class HomeFragment extends Fragment {
                     rvPopular.setLayoutManager(new GridLayoutManager(getContext(),2));
                 }else {
                     Toast.makeText(getContext(),"Aucune corresponsance trouvée", Toast.LENGTH_LONG).show();
-
                 }
 
             }
@@ -88,4 +98,22 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.langFR:
+                Toast.makeText(getContext(), "Changed", Toast.LENGTH_SHORT).show();
+                getPopular();
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+
 }

@@ -1,27 +1,25 @@
 package com.example.tp1.MoviesRecycler;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.example.tp1.Movie;
+import com.example.tp1.Movie.Movie;
+import com.example.tp1.Details;
 import com.example.tp1.R;
+import com.squareup.picasso.Picasso;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<ViewHolder> {
+public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private  final List<Movie> movies;//Va stocquer la liste de repos qu'on lui passera en paramatre à l'instanciation
 
@@ -44,37 +42,48 @@ public class Adapter extends RecyclerView.Adapter<ViewHolder> {
         //Remplissage des champs du view holder avec les valeurs de la position correspondante
         Movie movie = movies.get(position);
         ImageView movieImg = holder.movieImg;
-        new DownLoadImageTask(movieImg).execute("https://image.tmdb.org/t/p/w500/"+movie.getImageUrl());
-
+        //movieImg.setImageURI(Uri.parse("https://image.tmdb.org/t/p/w500/"+movie.getImageUrl()));
+        Picasso.get().load("https://image.tmdb.org/t/p/w500/"+movie.getImageUrl()).into(movieImg);
+        //new DownLoadImageTask(movieImg).execute("https://image.tmdb.org/t/p/w500/"+movie.getImageUrl());
+        holder.movieImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), Details.class);
+                intent.putExtra("movieId",movie.getMovie_id());
+                view.getContext().startActivity(intent);
+                //You can call detail fragment here
+            }
+        });
+        holder.addFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "ADD TO FAV", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
         return movies.size();
     }
 
-    private class DownLoadImageTask extends AsyncTask<String, Void, Bitmap> {
-        ImageView imageView;
 
-        public DownLoadImageTask(ImageView imageView) {
-            this.imageView = imageView;
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+
+        public ImageView movieImg;
+        public  ImageView addFav;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            movieImg = itemView.findViewById(R.id.movieImg);
+            addFav =  itemView.findViewById(R.id.addFav);
+
+
         }
 
-        protected Bitmap doInBackground(String... urls) {
-            String urlOfImage = urls[0];
-            Bitmap logo = null;
-            try {
-                InputStream is = new URL(urlOfImage).openStream();
-                logo = BitmapFactory.decodeStream(is);
 
-            } catch (Exception e) { // Catch the download exception
-                e.printStackTrace();
-            }
-            return logo;
-        }
-
-        protected void onPostExecute(Bitmap result) {
-            imageView.setImageBitmap(result);
-        }
     }
+
 }
