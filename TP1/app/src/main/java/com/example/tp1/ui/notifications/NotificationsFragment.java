@@ -18,11 +18,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tp1.MainActivity;
+import com.example.tp1.Movie.Movie;
 import com.example.tp1.MovieServices;
 import com.example.tp1.Movie.Movies;
 import com.example.tp1.MoviesRecycler.Adapter;
+import com.example.tp1.MoviesRecycler.EndlessScrollEventListener;
 import com.example.tp1.R;
 import com.example.tp1.databinding.FragmentNotificationsBinding;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,6 +44,11 @@ public class NotificationsFragment extends Fragment {
     private String searchInput;
     private SearchView search;
     Resources resources;
+    int page = 0;
+    private GridLayoutManager lm  ;
+    private List<Movie> movies = new ArrayList<>();
+    private EndlessScrollEventListener endlessScrollEventListener;
+    private String queryString="";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -56,10 +66,12 @@ public class NotificationsFragment extends Fragment {
 
         rvSearch = binding.rvSearch;
         search = binding.search;
+        lm = new GridLayoutManager(getContext(),2);
 
         search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                queryString=query;
                 searchMovies(query);
                 return  false;
             }
@@ -71,13 +83,16 @@ public class NotificationsFragment extends Fragment {
 
             }
         });
-
-        /*notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        endlessScrollEventListener = new EndlessScrollEventListener(lm) {
             @Override
-            public void onChanged(@Nullable String s) {
-                searchMovies();
+            public void onLoadMore(int pageNum, RecyclerView recyclerView) {
+                /*Todo: add your request call to load more data from server or database here */
+                getMoreMovies();
             }
-        });*/
+        };
+
+        rvSearch.addOnScrollListener(endlessScrollEventListener);
+
 
         return root;
     }
@@ -97,9 +112,35 @@ public class NotificationsFragment extends Fragment {
             public void onResponse(Call<Movies> call, Response<Movies> response) {
 
                 if(response.body()!= null) {
-                    Adapter adapter = new Adapter(response.body().getMovies());
+                    movies.clear();
+                    movies.addAll(response.body().getMovies());
+                    Adapter adapter = new Adapter(movies);
                     rvSearch.setAdapter(adapter);
-                    rvSearch.setLayoutManager(new GridLayoutManager(getContext(),2));
+                    rvSearch.setLayoutManager(lm);
+                }else {
+                    Toast.makeText(getContext(),"Aucune corresponsance trouvée", Toast.LENGTH_LONG).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Movies> call, Throwable t) {
+                Toast.makeText(getContext(),"Une erreur s'est produit", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    public void getMoreMovies(){
+
+        resources = getContext().getResources();
+        String lang = resources.getString(R.string.language);
+        page++;
+
+        movieServices.searchMovie(lang,queryString,page).enqueue(new Callback<Movies>() {
+            @Override
+            public void onResponse(Call<Movies> call, Response<Movies> response) {
+
+                if(response.body()!= null) {
+                  movies.addAll(response.body().getMovies());
                 }else {
                     Toast.makeText(getContext(),"Aucune corresponsance trouvée", Toast.LENGTH_LONG).show();
                 }

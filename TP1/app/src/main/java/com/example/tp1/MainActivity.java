@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Context context;
     Resources resources;
 
+    /*Rafraichire la page au changement de la langue*/
     public FragmentRefreshListener getFragmentRefreshListener() {
         return fragmentRefreshListener;
     }
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private FragmentRefreshListener fragmentRefreshListener;
 
+    /*Ajouter le bouton de choix de langue a la bare d'action*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.title_bar, menu);
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*Changer la langue locale en fonction du bouton clicqué*/
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
@@ -106,4 +109,6 @@ public class MainActivity extends AppCompatActivity {
     public interface FragmentRefreshListener{
         void onRefresh();
     }
+
+    
 }
