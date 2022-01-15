@@ -6,6 +6,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.tp1.databinding.ActivityMainBinding;
 
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     Context context;
     Resources resources;
+
 
     /*Rafraichire la page au changement de la langue*/
     public FragmentRefreshListener getFragmentRefreshListener() {
